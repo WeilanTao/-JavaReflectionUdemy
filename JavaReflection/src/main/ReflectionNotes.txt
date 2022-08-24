@@ -1,0 +1,27 @@
+Reflection's entry point(Class):
+    Class<?>: entry point for us to reflect on our application's code
+    An object of Class<?> contains all the information on
+        A given object's runtime type
+        A class in our application
+    That information includes
+        What methods and fields it contains
+        what classes it extends
+        what interfaces it implements
+        ...
+
+Ways to obtain an object of type Class<?>
+    1. Object.getClass();
+        No Object.getClass() for primitive types => compilation error
+    2. .class suffix to a type name
+        e.g. Class<?> mapClass = HashMap.class;
+        for primitive: Class doubleType = double.class;
+    3. Class.forName()
+        inner class can be accessed by $ sign:
+            Class<?> engineType = Class.forName("vehicles.Car$Engine");
+        not for primitive types
+        ClassNotFoundException
+
+Generics -- Java Wildcards
+    Class<?> can describe a class object of any parameter type
+    Class<?> is a super type to Class<T>
+    Class<?> is also used when the generic type is generic itself
